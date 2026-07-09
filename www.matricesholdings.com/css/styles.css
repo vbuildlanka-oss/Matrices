@@ -79,7 +79,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.1px;
+    -webkit-tap-highlight-color: transparent;
 }
+/* Never let anything push a horizontal scrollbar on small screens */
+html, body { max-width: 100%; }
 
 /* Lenis */
 html.lenis,
@@ -752,7 +755,7 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     min-height: 380px;
     background: var(--ink);
 }
-.ceo-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; position: absolute; inset: 0; }
+.ceo-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; position: absolute; inset: 0; }
 .ceo-photo::after {
     content: '';
     position: absolute; inset: 0;
@@ -788,7 +791,9 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
 .person:hover { transform: translateY(-8px); border-color: var(--accent); }
 .person-photo {
     position: relative;
-    aspect-ratio: 1 / 1;
+    /* Matches the team photos' native ratio (774x900) exactly, so cover
+       fills the frame with zero cropping. */
+    aspect-ratio: 774 / 900;
     overflow: hidden;
     border-radius: var(--r-lg) var(--r-lg) 0 0;
     background: var(--ink);
@@ -796,9 +801,10 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
 .person-photo img {
     width: 100%; height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: transform 0.7s var(--ease);
 }
-.person:hover .person-photo img { transform: scale(1.06); }
+.person:hover .person-photo img { transform: scale(1.03); }
 .person-photo::after {
     content: '';
     position: absolute; inset: 0;
@@ -915,7 +921,9 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
    --------------------------------------------------------------------- */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* min(100%, 300px) prevents a forced 300px track (and horizontal
+       overflow) on phones narrower than 300px of content width. */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
 }
 .news-card {
@@ -935,10 +943,12 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
 .news-media video {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
-    object-fit: cover;
+    /* contain = the full photo is always shown on the dark backdrop, so no
+       image is ever cropped or zoomed regardless of its native aspect ratio
+       (the news photos range from tall portraits to wide landscapes). */
+    object-fit: contain;
+    object-position: center;
 }
-.news-card:hover .news-media img { transform: scale(1.06); }
-.news-media img { transition: transform 0.7s var(--ease); }
 .carousel-slide { opacity: 0; transition: opacity 1s var(--ease); }
 .carousel-slide.active { opacity: 1; }
 .news-tag {
@@ -1212,26 +1222,72 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
 /* ---------------------------------------------------------------------
    24. RESPONSIVE
    --------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+
+/* ---- Small laptop / large tablet landscape ---- */
+@media (max-width: 1080px) {
     .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---- Tablet (portrait) ---- */
+@media (max-width: 900px) {
+    :root { --maxw: 720px; }
     .foundation-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    /* Reduce ambient GPU cost on tablets/phones: smaller blobs, no motion */
+    .ambient::before, .ambient::after { filter: blur(60px); animation: none; opacity: 0.4; }
 }
+
+/* ---- Large phone / small tablet ---- */
 @media (max-width: 860px) {
     .about-grid { grid-template-columns: 1fr; }
+    .about-visual { min-height: 220px; }
     .ceo-wrap { grid-template-columns: 1fr; }
-    .ceo-photo { min-height: 300px; }
+    /* CEO photo is a 2:3 portrait — use its true ratio so it's never cropped */
+    .ceo-photo { aspect-ratio: 3 / 4; min-height: 0; }
+    .ceo-photo img { object-position: center 12%; }
+    .ceo-photo::after { background: linear-gradient(180deg, transparent 60%, rgba(4, 6, 10, 0.5)); }
     .contact-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 620px) {
+
+/* ---- Phones ---- */
+@media (max-width: 640px) {
+    section { padding: clamp(3.2rem, 13vw, 5rem) 0; }
+    .hero { padding-top: 6rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-top { grid-template-columns: 1fr; }
+    .stat { padding: 1.4rem 0.8rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 1.6rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     .newsletter { flex-direction: column; }
     .newsletter input { border-radius: var(--r-sm); }
     .newsletter .btn { width: 100%; }
-    .hero-actions { width: 100%; }
-    .hero-actions .btn { flex: 1; }
-    .nav { width: calc(100% - 1.6rem); }
+    .hero-actions { width: 100%; flex-direction: column; }
+    .hero-actions .btn { width: 100%; }
+    .nav { width: calc(100% - 1.4rem); padding: 0.55rem 0.55rem 0.55rem 1rem; }
+    .nav-cta .btn { display: none; }           /* keep the pill compact */
+    .news-body { padding: 1.2rem; }
+    .article-head, .article-body { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .ceo-body { padding: 1.6rem; }
+    .to-top { right: 1rem; bottom: 1rem; width: 46px; height: 46px; }
+    /* Give people cards a touch more room so two fit comfortably */
+    .people-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 400px) {
+    .brand-text { display: none; }             /* logo mark only, avoids crowding */
+    .stats-grid { gap: 0.7rem; }
+    .stat { padding: 1.2rem 0.6rem; }
+    .people-grid { grid-template-columns: 1fr; }
+    .sectors-mobile .sector-card { flex-basis: 88%; }
+}
+
+/* Coarse pointers (touch): drop hover-only lifts that can feel sticky */
+@media (hover: none) {
+    .news-card:hover, .person:hover, .found-card:hover,
+    .sector-card:hover, .stat:hover, .brand-chip:hover { transform: none; }
+    /* No hover on touch, so show brand logos in full colour by default */
+    .brand-chip img { filter: none; }
 }
 
 /* ---------------------------------------------------------------------
