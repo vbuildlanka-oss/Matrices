@@ -1225,6 +1225,23 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     .footer-brand { grid-column: 1 / -1; }
     /* Reduce ambient GPU cost on tablets/phones: smaller blobs, no motion */
     .ambient::before, .ambient::after { filter: blur(60px); animation: none; opacity: 0.4; }
+
+    /* News cards: horizontal scroll on mobile/tablet */
+    .news-grid {
+        display: flex;
+        gap: 1.2rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 var(--gutter) 1rem;
+        margin: 0 calc(-1 * var(--gutter));
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .news-grid::-webkit-scrollbar { display: none; }
+    .news-grid .news-card {
+        flex: 0 0 min(320px, 80vw);
+        scroll-snap-align: center;
+    }
 }
 
 /* ---- Large phone / small tablet ---- */
