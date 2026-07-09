@@ -40,20 +40,22 @@
     function initLenis() {
         if (prefersReduced || typeof Lenis === 'undefined') return;
         lenis = new Lenis({
-            duration: 1.15,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
+            lerp: 0.09,           // smoothing factor — low = silky glide
             wheelMultiplier: 1,
-            touchMultiplier: 1.6,
+            smoothWheel: true,
+            syncTouch: false,     // let touch devices use native (snappier) scroll
         });
 
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        if (typeof ScrollTrigger !== 'undefined') {
+        // IMPORTANT: drive Lenis from a SINGLE loop. Previously it ran both a
+        // manual requestAnimationFrame loop AND gsap.ticker, calling lenis.raf
+        // twice per frame — that fought itself and caused stutter.
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((t) => lenis.raf(t * 1000));
             gsap.ticker.lagSmoothing(0);
+        } else {
+            const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+            requestAnimationFrame(raf);
         }
     }
 
@@ -139,38 +141,8 @@
     }
 
     /* ---------------------------------------------------------------
-       CUSTOM CURSOR + MAGNETIC + SPOTLIGHT
+       MAGNETIC BUTTONS (subtle, desktop only)
        --------------------------------------------------------------- */
-    function initCursor() {
-        const dot = document.getElementById('cursorDot');
-        const ring = document.getElementById('cursorRing');
-        const spotlight = document.getElementById('spotlight');
-        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-        let rx = mx, ry = my;
-
-        window.addEventListener('mousemove', (e) => {
-            mx = e.clientX; my = e.clientY;
-            if (dot) { dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`; }
-            if (spotlight) {
-                spotlight.style.setProperty('--mx', (mx / window.innerWidth) * 100 + '%');
-                spotlight.style.setProperty('--my', (my / window.innerHeight) * 100 + '%');
-            }
-        });
-
-        function ringLoop() {
-            rx += (mx - rx) * 0.18;
-            ry += (my - ry) * 0.18;
-            if (ring) ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
-            requestAnimationFrame(ringLoop);
-        }
-        if (!isTouch) ringLoop();
-
-        document.querySelectorAll('a, button, [data-magnetic], .news-card, .stat, input, textarea').forEach((el) => {
-            el.addEventListener('mouseenter', () => ring && ring.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => ring && ring.classList.remove('hovering'));
-        });
-    }
-
     function initMagnetic() {
         if (isTouch) return;
         document.querySelectorAll('[data-magnetic]').forEach((el) => {
@@ -252,7 +224,8 @@
                     start: 'top top',
                     end: () => '+=' + getScrollAmount(),
                     pin: true,
-                    scrub: 1,
+                    scrub: 0.6,
+                    anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
                         if (hProgress) hProgress.style.width = Math.max(12, self.progress * 100) + '%';
@@ -419,7 +392,7 @@
         initForms();
         initCarousels();
         initNewsLinks();
-        if (!isTouch) { initCursor(); initMagnetic(); }
+        if (!isTouch) initMagnetic();
 
         runPreloader(() => {
             initLenis();
