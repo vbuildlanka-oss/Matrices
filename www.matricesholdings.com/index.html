@@ -1,668 +1,563 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from www.matricesholdings.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jul 2026 14:11:25 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Matrices (Pvt) Ltd - Welcome</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#04060a">
+    <meta name="description" content="The Matrices (Pvt) Ltd — a diversified enterprise delivering excellence across eight business sectors, from real estate and tourism to technology with Nexus Solutions.">
+    <title>The Matrices (Pvt) Ltd — Diversified Excellence</title>
+
     <link rel="icon" type="image/png" href="assets/images/logos/Logomark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="scroll-bg" id="scrollBg"></div>
+    <script>document.documentElement.classList.remove('no-js');</script>
+
+    <!-- Ambient background layers -->
+    <div class="ambient"></div>
+    <div class="spotlight" id="spotlight"></div>
+    <div class="grain"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Preloader -->
     <div id="preloader">
-        <div class="preloader-content">
-            <img src="assets/images/logos/Logomark.png" alt="The Matrices Logo" class="preloader-logo">
-            <h1 class="preloader-text">THE MATRICES (PVT) LTD</h1>
-        </div>
+        <img src="assets/images/logos/Logomark.png" alt="The Matrices" class="pre-logo">
+        <div class="pre-bar"><span id="preBar"></span></div>
+        <div class="pre-count"><span id="preCount">0</span>% · LOADING</div>
     </div>
-    <header class="header">
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
         <nav class="nav">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="assets/images/logos/Logomark_white.png" alt="The Matrices Logo" class="logo-img">
-                    <span class="logo-text">THE MATRICES</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#services" class="nav-link">Business Sectors</a></li>
-                    <li><a href="#vision-mission" class="nav-link">Foundation</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#news" class="nav-link">News</a></li>
-                    <li><a href="#brands" class="nav-link">Brands</a></li>
-                </ul>
-                <div class="hamburger" aria-expanded="false" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <a href="#home" class="brand" data-magnetic>
+                <img src="assets/images/logos/Logomark_white.png" alt="The Matrices logo">
+                <span class="brand-text">THE <b>MATRICES</b></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#achievements" class="nav-link">Impact</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#services" class="nav-link">Sectors</a></li>
+                <li><a href="#foundation" class="nav-link">Foundation</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#brands" class="nav-link">Brands</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary" data-magnetic>Get in touch</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
 
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#about">About</a>
+        <a href="#achievements">Impact</a>
+        <a href="#team">Team</a>
+        <a href="#services">Sectors</a>
+        <a href="#foundation">Foundation</a>
+        <a href="#news">News</a>
+        <a href="#brands">Brands</a>
+        <a href="#contact">Contact</a>
+    </div>
+
     <main>
+        <!-- HERO -->
         <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-logo">
-                        <img src="assets/images/logos/Logomark_white.png" alt="The Matrices Logo" class="hero-logo-img">
-                    </div>
-                    <h1 class="hero-title">THE MATRICES</h1>
-                    <p class="hero-subtitle">(PVT) LTD</p>
-                    <p class="hero-description">Innovative solutions for tomorrow's challenges</p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-primary">Learn More</a>
-                        <a href="#contact" class="btn btn-secondary">Get Started</a>
-                    </div>
+            <div class="container hero-inner">
+                <img src="assets/images/logos/Logomark_white.png" alt="The Matrices" class="hero-logo" id="heroLogo">
+                <h1 class="hero-title">
+                    <span class="line"><span class="word">THE</span></span>
+                    <span class="line"><span class="word grad">MATRICES</span></span>
+                </h1>
+                <p class="hero-sub">(PVT) LTD</p>
+                <p class="hero-desc">One vision, many industries. We build, invest in, and scale businesses across eight sectors — with integrity, innovation, and relentless excellence.</p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary" data-magnetic>Explore our sectors <span class="btn-arrow">→</span></a>
+                    <a href="#contact" class="btn btn-ghost" data-magnetic>Partner with us</a>
                 </div>
             </div>
-            <div class="hero-background"></div>
+            <a href="#about" class="hero-scroll" aria-label="Scroll down">
+                <span class="mouse"></span>
+                Scroll
+            </a>
         </section>
 
+        <!-- TAGLINE TICKER -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="tickerTrack">
+                <span>Real Estate</span><span>Tourism</span><span>Vehicle Trading</span><span>Fashion</span><span>Manpower</span><span>Technology</span><span>Investments</span>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
         <section id="about" class="about">
             <div class="container">
-                <div class="section-header">
-                    <h2>About Us</h2>
-                    <p>Discover what makes The Matrices your trusted partner</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Who We Are</h3>
-                        <p>The Matrices (Pvt) Ltd is a dynamic and diversified company committed to delivering excellence across multiple business sectors. Since our inception, we have built a reputation for reliability, innovation, and customer satisfaction. Our journey began with a vision to create sustainable business opportunities, and today we proudly operate in seven major sectors, serving a wide range of clients both locally and internationally.</p>
+                <div class="about-grid">
+                    <div class="about-copy" data-reveal>
+                        <span class="eyebrow">Who we are</span>
+                        <h2 class="section-title" style="margin:1.1rem 0 1.4rem;">A diversified group built on <span class="grad">trust</span>.</h2>
+                        <p>The Matrices (Pvt) Ltd is a <span class="hl">dynamic, multi-sector enterprise</span> committed to excellence across every industry we touch. From a single vision, we've grown into a group operating in eight major sectors, serving clients locally and internationally.</p>
+                        <p>Reliability, innovation, and customer satisfaction aren't slogans — they're how we've built our reputation, one venture at a time.</p>
+                        <ul class="about-points">
+                            <li><span class="tick">✓</span> Sustainable business opportunities across borders</li>
+                            <li><span class="tick">✓</span> A portfolio spanning products, services & technology</li>
+                            <li><span class="tick">✓</span> Long-term partnerships built on professionalism</li>
+                        </ul>
                     </div>
-                    <div class="about-visual">
-                        <img src="assets/images/logos/Logo_horizontal_white.png" alt="The Matrices Horizontal Logo" class="about-logo">
+                    <div class="about-visual glass" data-reveal>
+                        <img src="assets/images/logos/Logo_horizontal_white.png" alt="The Matrices horizontal logo">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ACHIEVEMENTS / STATS -->
         <section id="achievements" class="achievements">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Journey & Achievements</h2>
-                    <p>Building success across industries and markets</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Our impact</span>
+                    <h2 class="section-title">Numbers that <span class="grad">compound</span></h2>
+                    <p class="section-sub">Five years of building success across industries and markets.</p>
                 </div>
-                <div class="achievements-content">
-                    
-                    <div class="stats-section">
-                        <h3> <img src="assets/images/misc/WhatsApp%20Image%202025-09-08%20at%2019.51.23_be64e5da.jpg"style="height: 40px; width: 40px:" class="stats-socrates"> Our Impact</h3>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-number">8+</div>
-                                <div class="stat-label">Industries</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">4+</div>
-                                <div class="stat-label">Countries</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">5+</div>
-                                <div class="stat-label">Years in Business (Experience)</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">20+</div>
-                                <div class="stat-label">Businesses</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">20+</div>
-                                <div class="stat-label">Investors</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Investments</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stats-grid glass" style="padding:1.4rem;" data-reveal>
+                    <div class="stat"><div class="stat-num" data-count="8">0</div><div class="stat-label">Industries</div></div>
+                    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-label">Countries</div></div>
+                    <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">Years of Experience</div></div>
+                    <div class="stat"><div class="stat-num" data-count="20">0</div><div class="stat-label">Businesses</div></div>
+                    <div class="stat"><div class="stat-num" data-count="20">0</div><div class="stat-label">Investors</div></div>
+                    <div class="stat"><div class="stat-num" data-count="50">0</div><div class="stat-label">Investments</div></div>
                 </div>
             </div>
         </section>
 
-        <section id="brands" class="brands">
+        <!-- TEAM -->
+        <section id="team" class="team">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Brands</h2>
-                    <p>Trusted partners and brands under The Matrices umbrella</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Leadership</span>
+                    <h2 class="section-title">The people behind <span class="grad">the vision</span></h2>
+                    <p class="section-sub">Meet the leadership team driving our success across every sector.</p>
                 </div>
-                <div class="brands-container">
-                    <div class="brands-grid">
-                        <img src="assets/images/brands/Nexus-01.png" alt="Nexus" loading="lazy" class="brand-image" >
-                        <img src="assets/images/brands/Zenon%20construction%20logo.png" alt="Zenon Construction" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/all%20fix-02.png" alt="All Fix" loading="lazy" class="brand-image" >
-                        <img src="assets/images/brands/YS_iStore_logo.jpg" alt="Mobile Accessories Brand" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/Thara_logo.jpg" alt="Thara Kurthi Collection" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/Rishok_sweet_logo.png" alt="Rishoks Sweet Products" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/stock_traders_logo.jpg" alt="Stock Trading" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/LAproject_logo.png" alt="LA Project" loading="lazy" class="brand-image">
-                        <img src="assets/images/brands/go_pro_streer_logo.png" alt="Auto hub" loading="lazy" class="brand-image">
-                       
+
+                <div class="ceo-wrap glass" data-reveal>
+                    <div class="ceo-photo">
+                        <img src="assets/images/team/Hindujaan.jpeg" alt="Hindujaan, Chief Executive Officer">
                     </div>
+                    <div class="ceo-body">
+                        <span class="ceo-badge">Chief Executive Officer</span>
+                        <h3 class="ceo-name">Hindujaan</h3>
+                        <p class="ceo-role">Founder & CEO</p>
+                        <p class="ceo-bio">With over 7 years of leadership experience across industries, Hindujaan has been the driving force behind The Matrices' growth — turning a single idea into a diversified group of ventures.</p>
+                    </div>
+                </div>
+
+                <h3 class="subhead" data-reveal>Our Directors</h3>
+                <div class="people-grid" style="max-width:640px;margin:0 auto;">
+                    <article class="person glass" data-reveal>
+                        <div class="person-photo"><img src="assets/images/team/edited/risho.png" alt="Rishokanth"></div>
+                        <h4 class="person-name">Rishokanth</h4>
+                        <p class="person-role">Director · Co-Founder</p>
+                    </article>
+                    <article class="person glass" data-reveal>
+                        <div class="person-photo"><img src="assets/images/team/edited/Vikash.png" alt="Vigaish"></div>
+                        <h4 class="person-name">Vigaish</h4>
+                        <p class="person-role">Director</p>
+                    </article>
+                </div>
+
+                <h3 class="subhead" data-reveal>Tech Team</h3>
+                <div class="people-grid">
+                    <article class="person glass" data-reveal>
+                        <div class="person-photo"><img src="assets/images/team/edited/ladhu.png" alt="Lathurshan Muralitharan"></div>
+                        <h4 class="person-name">Lathurshan Muralitharan</h4>
+                        <p class="person-role">CEO · LAprojects Canada</p>
+                        <p class="person-note">B.Sc. Hons Computer Science (Canada). Leading technological innovation and strategic development.</p>
+                    </article>
+                    <article class="person glass" data-reveal>
+                        <div class="person-photo"><img src="assets/images/team/edited/shukri.png" alt="Shukri Ahmed"></div>
+                        <h4 class="person-name">Shukri Ahmed</h4>
+                        <p class="person-role">B.Sc. Hons Engineering</p>
+                        <p class="person-note">Specializing in Computer Engineering with a focus on innovative solutions and system architecture.</p>
+                    </article>
+                    <article class="person glass" data-reveal>
+                        <div class="person-photo"><img src="assets/images/team/edited/thusha.png" alt="Thusharkanth Loganathan"></div>
+                        <h4 class="person-name">Thusharkanth Loganathan</h4>
+                        <p class="person-role">Tech Team Lead</p>
+                        <p class="person-note">BSc (Hons) Artificial Intelligence & Data Science. Expert in AI-driven solutions and data analytics.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-       <section id="team" class="team">
-    <div class="container">
-        <div class="section-header">
-            <h2>OUR TEAM</h2>
-            <p>Meet the leadership team driving our success</p>
-        </div>
-        
-        <!-- CEO Card -->
-        <div class="ceo-container">
-            <div class="team-member ceo-background">
-                <div class="team-photo">
-                    <img src="assets/images/team/Hindujaan.jpeg" alt="Lorem Ipsum" class="team-member-img">
-                </div>
-                <div class="team-info">
-                    <h3 class="team-name">Hindujaan</h3>
-                    <p class="team-title">Chief Executive Officer</p>
-                    <p class="team-qualification">
-                        With over 7 years of leadership experience in the industry, Hindujaan has been the driving force behind The Matrices' success.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Directors -->
-        <div class="directors-container">
-            <div class="section-header">
-                <h3>Our Directors</h3>
-            </div>
-            <div class="directors-scroll">
-                <div class="team-member director-card">
-                    <div class="team-photo">
-                        <img src="assets/images/team/edited/risho.png" alt="Rishokanth" class="team-member-img">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Rishokanth</h3>
-                        <p class="team-title">Director | Co-Founder</p>
-                    </div>
-                </div>
-                
-                <div class="team-member director-card">
-                    <div class="team-photo">
-                        <img src="assets/images/team/edited/Vikash.png" alt="Vigaish" class="team-member-img">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Vigaish</h3>
-                        <p class="team-title">Director</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="tech-team" class="team tech-team">
-    <div class="container">
-        <div class="section-header">
-            <h2>TECH TEAM</h2>
-            <p>Our technology experts driving innovation</p>
-        </div>
-        <div class="team-grid-container">
-            <div class="team-grid">
-                <div class="team-member ceo-background">
-                    <div class="team-photo">
-                        <img src="assets/images/team/edited/ladhu.png" alt="Lathurshan Muralitharan" class="team-member-img" style="object-fit: fill !important;">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Lathurshan Muralitharan</h3>
-                        <p class="team-title">CEO (LAprojects Canada)</p>
-                        <p class="team-qualification">
-                            B.Sc.Hons Computer Science (Canada). Leading technological innovation and strategic development at The Matrices.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="team-member ceo-background">
-                    <div class="team-photo">
-                        <img src="assets/images/team/edited/shukri.png" alt="Shukri Ahmed" class="team-member-img" loading="eager" decoding="sync" style="object-fit: fill !important;">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Shukri Ahmed</h3>
-                        <p class="team-title">B.Sc.Hons Engineering</p>
-                        <p class="team-qualification">
-                            Specializing in Computer Engineering with a focus on innovative solutions and system architecture.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="team-member ceo-background">
-                    <div class="team-photo">
-                        <img src="assets/images/team/edited/thusha.png" alt="Thusharkanth Loganathan" class="team-member-img" loading="eager" decoding="sync" style="object-fit: fill !important;">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Thusharkanth Loganathan</h3>
-                        <p class="team-title">Tech Team Lead</p>
-                        <p class="team-qualification">BSc (Hons) Artificial Intelligence & Data Science. Expert in AI-driven solutions and data analytics.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <section id="services" class="services section-padding">
+        <!-- SECTORS (horizontal pinned) -->
+        <section id="services" class="sectors">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Our Business Sectors</h2>
-                    <p class="section-subtitle">Diverse sectors delivering excellence across multiple industries</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">What we do</span>
+                    <h2 class="section-title">Eight sectors, <span class="grad">one standard</span></h2>
+                    <p class="section-sub">Diverse industries delivering excellence — scroll through the businesses that make up The Matrices.</p>
                 </div>
-                <div class="services-container">
-                    <div class="services-scroll-wrapper">
-                        <div class="services-grid">
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">🏢</div>
-                                    <h3 class="service-title">Real Estate</h3>
-                                    <div class="service-content">
-                                        <p>Our real estate division specializes in property development, sales, leasing, and investment opportunities, offering clients reliable solutions for residential and commercial needs.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">✈️</div>
-                                    <h3 class="service-title">Ticketing & Tourism</h3>
-                                    <div class="service-content">
-                                        <p>We provide travel and tourism services, including domestic and international ticketing, tour packages, and personalized travel planning to make every journey memorable.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">🚗</div>
-                                    <h3 class="service-title">Vehicle Rental</h3>
-                                    <div class="service-content">
-                                        <p>Our vehicle rental services cater to individual and corporate clients, offering a wide range of vehicles to ensure convenience, comfort, and affordability.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">💰</div>
-                                    <h3 class="service-title">Vehicle Trading</h3>
-                                    <div class="service-content">
-                                        <p>We facilitate buying and selling of vehicles with transparency and efficiency, ensuring that customers receive the best value and quality.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">👕</div>
-                                    <h3 class="service-title">Clothing Business</h3>
-                                    <div class="service-content">
-                                        <p>Our clothing line focuses on delivering stylish, high-quality apparel to meet modern fashion demands, blending creativity with affordability.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">👥</div>
-                                    <h3 class="service-title">Manpower Agency</h3>
-                                    <div class="service-content">
-                                        <p>Through our manpower services, we connect businesses with skilled and reliable human resources, contributing to both employment growth and organizational success.</p>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="service-card">
-                                <div class="service-card-inner">
-                                    <div class="service-icon">🚀</div>
-                                    <h3 class="service-title">Nexus Solutions</h3>
-                                    <div class="service-content">
-                                        <p>We help businesses scale online with powerful solutions in software, design, development, AI, and digital marketing—driven by our IT arm, The Matrices Nexus Solutions.</p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="scroll-indicator">
-                        <span>Scroll down</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
+            </div>
+
+            <!-- Desktop: pinned horizontal scroll -->
+            <div class="h-scroll" id="hScroll">
+                <div class="h-hint">Keep scrolling →</div>
+                <div class="h-track" id="hTrack">
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">01 / 08</div><div class="sector-icon">🏢</div></div>
+                        <div><h3 class="sector-title">Real Estate</h3><p class="sector-desc">Property development, sales, leasing and investment — reliable solutions for residential and commercial needs.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">02 / 08</div><div class="sector-icon">✈️</div></div>
+                        <div><h3 class="sector-title">Ticketing & Tourism</h3><p class="sector-desc">Domestic and international ticketing, tour packages, and personalised travel planning for memorable journeys.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">03 / 08</div><div class="sector-icon">🚗</div></div>
+                        <div><h3 class="sector-title">Vehicle Rental</h3><p class="sector-desc">A wide range of vehicles for individual and corporate clients — convenience, comfort and affordability.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">04 / 08</div><div class="sector-icon">💰</div></div>
+                        <div><h3 class="sector-title">Vehicle Trading</h3><p class="sector-desc">Buying and selling vehicles with transparency and efficiency, ensuring the best value and quality.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">05 / 08</div><div class="sector-icon">👕</div></div>
+                        <div><h3 class="sector-title">Clothing Business</h3><p class="sector-desc">Stylish, high-quality apparel meeting modern fashion demands — blending creativity with affordability.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">06 / 08</div><div class="sector-icon">👥</div></div>
+                        <div><h3 class="sector-title">Manpower Agency</h3><p class="sector-desc">Connecting businesses with skilled, reliable talent — driving employment growth and organisational success.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">07 / 08</div><div class="sector-icon">📈</div></div>
+                        <div><h3 class="sector-title">Investments & Trading</h3><p class="sector-desc">Strategic investments and stock trading that grow value for our partners and stakeholders.</p></div>
+                    </article>
+                    <article class="sector-card glass">
+                        <div><div class="sector-index">08 / 08</div><div class="sector-icon">🚀</div></div>
+                        <div><h3 class="sector-title">Nexus Solutions</h3><p class="sector-desc">Software, design, development, AI and digital marketing — our IT arm helping businesses scale online.</p></div>
+                    </article>
                 </div>
+                <div class="h-progress"><span id="hProgress"></span></div>
+            </div>
+
+            <!-- Mobile: swipe -->
+            <div class="sectors-mobile">
+                <article class="sector-card glass"><div><div class="sector-index">01 / 08</div><div class="sector-icon">🏢</div></div><div><h3 class="sector-title">Real Estate</h3><p class="sector-desc">Property development, sales, leasing and investment for residential and commercial needs.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">02 / 08</div><div class="sector-icon">✈️</div></div><div><h3 class="sector-title">Ticketing & Tourism</h3><p class="sector-desc">Ticketing, tour packages, and personalised travel planning.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">03 / 08</div><div class="sector-icon">🚗</div></div><div><h3 class="sector-title">Vehicle Rental</h3><p class="sector-desc">A wide range of vehicles for individuals and corporates.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">04 / 08</div><div class="sector-icon">💰</div></div><div><h3 class="sector-title">Vehicle Trading</h3><p class="sector-desc">Transparent, efficient vehicle buying and selling.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">05 / 08</div><div class="sector-icon">👕</div></div><div><h3 class="sector-title">Clothing Business</h3><p class="sector-desc">Stylish, high-quality, affordable apparel.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">06 / 08</div><div class="sector-icon">👥</div></div><div><h3 class="sector-title">Manpower Agency</h3><p class="sector-desc">Skilled, reliable talent for growing businesses.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">07 / 08</div><div class="sector-icon">📈</div></div><div><h3 class="sector-title">Investments & Trading</h3><p class="sector-desc">Strategic investments and stock trading.</p></div></article>
+                <article class="sector-card glass"><div><div class="sector-index">08 / 08</div><div class="sector-icon">🚀</div></div><div><h3 class="sector-title">Nexus Solutions</h3><p class="sector-desc">Software, AI and digital marketing to scale online.</p></div></article>
             </div>
         </section>
 
-        <section id="vision-mission" class="vision-mission">
+        <!-- FOUNDATION -->
+        <section id="foundation" class="foundation">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Foundation</h2>
-                    <p>The principles that guide our success and growth</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Our foundation</span>
+                    <h2 class="section-title">Principles that <span class="grad">guide us</span></h2>
+                    <p class="section-sub">The values that shape every decision and every venture.</p>
                 </div>
                 <div class="foundation-grid">
-                    <article class="service-card vision-card">
-                        <div class="service-card-inner">
-                            <div class="service-icon">🎯</div>
-                            <h3 class="service-title">Our Vision</h3>
-                            <div class="service-content">
-                                <p>To be a leading multi-sector enterprise recognized for integrity, innovation, and excellence, while creating sustainable growth for our stakeholders.</p>
-                            </div>
-                        </div>
+                    <article class="found-card glass" data-reveal>
+                        <div class="found-icon">🎯</div>
+                        <h3 class="found-title">Our Vision</h3>
+                        <p>To be a leading multi-sector enterprise recognised for integrity, innovation and excellence — while creating sustainable growth for our stakeholders.</p>
                     </article>
-                    
-                    <article class="service-card mission-card">
-                        <div class="service-card-inner">
-                            <div class="service-icon">🚀</div>
-                            <h3 class="service-title">Our Mission</h3>
-                            <div class="service-content">
-                                <ul class="mission-list">
-                                    <li>To deliver high-quality products and services across diversified sectors.</li>
-                                    <li>To build long-term partnerships with clients through trust and professionalism.</li>
-                                    <li>To contribute positively to the economy by creating opportunities and value.</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <article class="found-card glass" data-reveal>
+                        <div class="found-icon">🚀</div>
+                        <h3 class="found-title">Our Mission</h3>
+                        <ul class="found-list">
+                            <li>Deliver high-quality products and services across diversified sectors.</li>
+                            <li>Build long-term partnerships through trust and professionalism.</li>
+                            <li>Contribute to the economy by creating opportunities and value.</li>
+                        </ul>
                     </article>
-                    
-                    <article class="service-card values-card">
-                        <div class="service-card-inner">
-                            <div class="service-icon">⭐</div>
-                            <h3 class="service-title">Core Values</h3>
-                            <div class="service-content">
-                                <div class="values-list">
-                                    <div class="value-item">
-                                        <strong>Integrity:</strong> Conducting business with honesty and transparency.
-                                    </div>
-                                    <div class="value-item">
-                                        <strong>Customer Focus:</strong> Placing client satisfaction at the center of all operations.
-                                    </div>
-                                    <div class="value-item">
-                                        <strong>Innovation:</strong> Continuously adapting to evolving markets and technologies.
-                                    </div>
-                                    <div class="value-item">
-                                        <strong>Excellence:</strong> Striving for the highest standards in every sector.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <article class="found-card glass" data-reveal>
+                        <div class="found-icon">⭐</div>
+                        <h3 class="found-title">Core Values</h3>
+                        <div class="value-item"><strong>Integrity</strong> Honesty and transparency in all we do.</div>
+                        <div class="value-item"><strong>Customer Focus</strong> Client satisfaction at the centre.</div>
+                        <div class="value-item"><strong>Innovation</strong> Adapting to evolving markets & tech.</div>
+                        <div class="value-item"><strong>Excellence</strong> The highest standards, every sector.</div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- BRANDS -->
+        <section id="brands" class="brands">
             <div class="container">
-                <div class="section-header">
-                    <h2>Want to be part of our MATRICES?</h2>
-                    <p>Ready to transform your business? Let's start a conversation.</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Our brands</span>
+                    <h2 class="section-title">Trusted names under <span class="grad">one umbrella</span></h2>
+                    <p class="section-sub">The brands and partners that make up The Matrices ecosystem.</p>
                 </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h3>📍 Location</h3>
-                            <p>No. 280 3rd mile post passara rd badulla</p>
+            </div>
+            <div class="brands-row" data-reveal>
+                <div class="brands-track" data-marquee="left">
+                    <div class="brand-chip"><img src="assets/images/brands/Nexus-01.png" alt="Nexus" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/Zenon construction logo.png" alt="Zenon Construction" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/all fix-02.png" alt="All Fix" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/YS_iStore_logo.jpg" alt="YS iStore" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/Thara_logo.jpg" alt="Thara Kurthi Collection" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/Rishok_sweet_logo.png" alt="Rishoks Sweets" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/stock_traders_logo.jpg" alt="Stock Traders" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/LAproject_logo.png" alt="LA Project" loading="lazy"></div>
+                    <div class="brand-chip"><img src="assets/images/brands/go_pro_streer_logo.png" alt="Auto Hub" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS -->
+        <section id="news" class="news">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Newsroom</span>
+                    <h2 class="section-title">Latest news & <span class="grad">updates</span></h2>
+                    <p class="section-sub">Stay informed about our developments, sponsorships and milestones.</p>
+                </div>
+
+                <div class="news-grid">
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#narunthingal">
+                        <div class="news-media" data-carousel data-interval="3000">
+                            <span class="news-tag">Culture</span>
+                            <img src="assets/images/news/Narunthingal/image01.jpeg" alt="Narunthingal 2026" class="carousel-slide active">
+                            <img src="assets/images/news/Narunthingal/DSC07220.webp" alt="Narunthingal 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Narunthingal/DSC07494.webp" alt="Narunthingal 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Narunthingal/DSC07702.webp" alt="Narunthingal 2026" class="carousel-slide" loading="lazy">
                         </div>
-                        <div class="contact-item">
-                            <h3>📧 Email</h3>
-                            <p>info@matricesholdings.com</p>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Jan 19, 2026</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Proudly Supporting Narunthingal'26</h3>
+                            <p class="news-excerpt">As Platinum Sponsor of IIT's Pongal Festival 2026, we're honoured to support an event that brings communities together.</p>
+                            <span class="news-more">Read more →</span>
                         </div>
-                        <div class="contact-item">
-                            <h3>📱 Phone</h3>
-                            <p>+94721242059</p>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#legalsmashdown">
+                        <div class="news-media" data-carousel data-interval="3000">
+                            <span class="news-tag">Sponsorship</span>
+                            <img src="assets/images/news/Law smashdown/i6.jpeg" alt="Legal Smashdown 2026" class="carousel-slide active">
+                            <img src="assets/images/news/Law smashdown/i7.jpeg" alt="Legal Smashdown 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Law smashdown/i8.jpeg" alt="Legal Smashdown 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Law smashdown/i9.jpeg" alt="Legal Smashdown 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Law smashdown/i10.jpeg" alt="Legal Smashdown 2026" class="carousel-slide" loading="lazy">
                         </div>
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Mar 29, 2026</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Title Sponsor of Legal Smashdown 2026</h3>
+                            <p class="news-excerpt">Empowering the next generation of law students to grow, connect and excel — on and off the court.</p>
+                            <span class="news-more">Read more →</span>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#ravananye2026">
+                        <div class="news-media">
+                            <span class="news-tag">Sponsorship</span>
+                            <img src="assets/images/new year party/image.jpeg" alt="RAVANA NYE 2026">
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Dec 31, 2025</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Stronger Bonds at RAVANA NYE 2026</h3>
+                            <p class="news-excerpt">We don't just build business — we build experiences. A night of energy, music and unforgettable memories.</p>
+                            <span class="news-more">Read more →</span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#smartlearning">
+                        <div class="news-media" data-carousel data-interval="3000">
+                            <span class="news-tag">Education</span>
+                            <img src="assets/images/news/Smart learning price giving/image001.jpg" alt="Smart Learning Center 2026" class="carousel-slide active">
+                            <img src="assets/images/news/Smart learning price giving/image 01.webp" alt="Smart Learning Center 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Smart learning price giving/image 002.webp" alt="Smart Learning Center 2026" class="carousel-slide" loading="lazy">
+                            <img src="assets/images/news/Smart learning price giving/image 003.webp" alt="Smart Learning Center 2026" class="carousel-slide" loading="lazy">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Apr 18, 2026</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Sponsoring Smart Learning Center 2026</h3>
+                            <p class="news-excerpt">Education builds tomorrow. We're proud to celebrate excellence at the Certificate Award Ceremony.</p>
+                            <span class="news-more">Read more →</span>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#award">
+                        <div class="news-media">
+                            <span class="news-tag">Featured</span>
+                            <img src="assets/images/news/risho_event_01.jpg" alt="Industry Award">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Aug 24, 2025</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Rishoks Sweets Wins Industry Award</h3>
+                            <p class="news-excerpt">Recognised for outstanding contributions to business excellence and innovation across multiple sectors.</p>
+                            <span class="news-more">Read more →</span>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#trophy">
+                        <div class="news-media">
+                            <span class="news-tag">Achievement</span>
+                            <img src="assets/images/news/award 01.jpg" alt="Trophy" style="object-fit:contain;">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Sep 1, 2025</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Trophy Awarded to The Matrices</h3>
+                            <p class="news-excerpt">Honoured with a prestigious trophy recognising exceptional performance and leadership.</p>
+                            <span class="news-more">Read more →</span>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#ceo">
+                        <div class="news-media">
+                            <span class="news-tag">Leadership</span>
+                            <img src="assets/images/news/event 01.jpg" alt="CEO Excellence Award" style="object-fit:contain;">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Aug 10, 2025</span><span>Executive Team</span></div>
+                            <h3 class="news-title">CEO Receives Excellence Award</h3>
+                            <p class="news-excerpt">Our CEO honoured for outstanding leadership and visionary guidance driving The Matrices forward.</p>
+                            <span class="news-more">Read more →</span>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#video">
+                        <div class="news-media">
+                            <span class="news-tag">Video</span>
+                            <video controls preload="metadata">
+                                <source src="assets/videos/thara_video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Sep 1, 2025</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">✨ Tharah Kurthi Clearance Sale is ON!</h3>
+                            <p class="news-excerpt">Grab your favourite styles at unbeatable prices before they're gone.</p>
+                            <span class="news-more">Watch full video →</span>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass" data-reveal data-href="pages/news.html#evfleet">
+                        <div class="news-media">
+                            <span class="news-tag">Expansion</span>
+                            <img src="assets/images/news/electic_vehicle.jpg" alt="Electric Vehicle Fleet" style="object-fit:contain;">
+                        </div>
+                        <div class="news-body">
+                            <div class="news-meta"><span class="date">Sep 1, 2025</span><span>The Matrices Team</span></div>
+                            <h3 class="news-title">Electric Vehicle Fleet Expansion</h3>
+                            <p class="news-excerpt">Expanding our EV fleet to enhance sustainable mobility and our BYD trading and rental services.</p>
+                            <span class="news-more">Read more →</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="cta-band glass" data-reveal>
+                    <h3>Stay updated</h3>
+                    <p>Subscribe to our newsletter for the latest news and updates.</p>
+                    <form class="newsletter" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary" data-magnetic>Subscribe</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section id="news" class="news">
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
             <div class="container">
-                <div class="section-header">
-                    <h2>Latest News & Updates</h2>
-                    <p>Stay informed about our latest developments and industry insights</p>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Get in touch</span>
+                    <h2 class="section-title">Want to be part of <span class="grad">The Matrices?</span></h2>
+                    <p class="section-sub">Ready to transform your business? Let's start a conversation.</p>
                 </div>
-                <div class="news-grid">
-                    <article class="news-card">
-                        <div class="news-image news-carousel" data-carousel-interval="3000">
-                            <img src="assets/images/news/Narunthingal/image01.jpeg" alt="Narunthingal 2026" class="news-img carousel-slide active">
-                            <img src="assets/images/news/Narunthingal/DSC07220.webp" alt="Narunthingal 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Narunthingal/DSC07494.webp" alt="Narunthingal 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Narunthingal/DSC07702.webp" alt="Narunthingal 2026" class="news-img carousel-slide">
-                            <div class="news-category">Culture</div>
+                <div class="contact-grid">
+                    <div class="contact-info glass" data-reveal>
+                        <div class="contact-item">
+                            <div class="ic">📍</div>
+                            <div><h4>Location</h4><p>No. 280, 3rd Mile Post, Passara Rd, Badulla</p></div>
                         </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">January 19, 2026</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">The Matrices (Pvt) Ltd Proudly Supports Narunthingal'26</h3>
-                            <p class="news-excerpt">At The Matrices (Pvt) Ltd, we take pride in celebrating culture and preserving traditions. As the Platinum Sponsor of Narunthingal'26 – IIT's Pongal Festival 2026, we are honored to support an event that brings communities together.</p>
-                            <a href="pages/news.html#narunthingal" class="news-read-more">Read More →</a>
+                        <div class="contact-item">
+                            <div class="ic">📧</div>
+                            <div><h4>Email</h4><p><a href="mailto:info@matricesholdings.com">info@matricesholdings.com</a></p></div>
                         </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image news-carousel" data-carousel-interval="3000">
-                            <img src="assets/images/news/Law%20smashdown/i6.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide active">
-                            <img src="assets/images/news/Law%20smashdown/i7.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Law%20smashdown/i8.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Law%20smashdown/i9.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Law%20smashdown/i10.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Law%20smashdown/image%2001%20(2).jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Law%20smashdown/image%2002.jpeg" alt="Legal Smashdown 2026" class="news-img carousel-slide">
-                            <div class="news-category">Sponsorship</div>
+                        <div class="contact-item">
+                            <div class="ic">📱</div>
+                            <div><h4>Phone</h4><p><a href="tel:+94721242059">+94 72 124 2059</a></p></div>
                         </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">March 29, 2026</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">The Matrices (Pvt) Ltd Proudly Sponsors Legal Smashdown 2026</h3>
-                            <p class="news-excerpt">At The Matrices (Pvt) Ltd, we believe in empowering the next generation beyond academics. As the Title Sponsor of Legal Smashdown 2026, we are proud to support young, aspiring law students to grow, connect, and excel.</p>
-                            <a href="pages/news.html#legalsmashdown" class="news-read-more">Read More →</a>
+                        <div class="socials">
+                            <a href="#" aria-label="Facebook">f</a>
+                            <a href="#" aria-label="Instagram">◎</a>
+                            <a href="#" aria-label="LinkedIn">in</a>
                         </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image news-carousel" data-carousel-interval="3000">
-                            <img src="assets/images/new%20year%20party/image.jpeg" alt="RAVANA NYE 2026" class="news-img carousel-slide active">
+                    </div>
+                    <form class="contact-form glass" id="contactForm" data-reveal>
+                        <div class="field">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
                         </div>
-                        <div class="news-category">Sponsorship</div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">December 31, 2025</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">Unforgettable Nights, Stronger Bonds – The Matrices Pvt Ltd at RAVANA NYE 2026 🎉🔥</h3>
-                            <p class="news-excerpt">
-                                At The Matrices Pvt Ltd, we don’t just build business—we build experiences.
-                                Proud to have supported RAVANA NYE – New Year Party 2026 at Ravana Pool Club, creating a night filled with energy, music, and unforgettable memories.
-                                From exclusive invites to our valued employees, business partners, and pillars, to great food, drinks, and nonstop vibes—this was our way of celebrating the people who grow with us every day.
-                                Here’s to stronger connections, bigger moments, and a year ahead full of success and good vibes. ✨🥂
-                            </p>
-                            <a href="pages/news.html#ravananye2026" class="news-read-more">Read More →</a>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="jane@company.com" required>
                         </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image news-carousel" data-carousel-interval="3000">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image001.jpg" alt="Smart Learning Center 2026" class="news-img carousel-slide active">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image%2001.webp" alt="Smart Learning Center 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image%20002.webp" alt="Smart Learning Center 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image%20003.webp" alt="Smart Learning Center 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image%20004.webp" alt="Smart Learning Center 2026" class="news-img carousel-slide">
-                            <img src="assets/images/news/Smart%20learning%20price%20giving/image%203.jpeg" alt="Smart Learning Center 2026" class="news-img carousel-slide">
-                            <div class="news-category">Education</div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or partnership idea..." required></textarea>
                         </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">April 18, 2026</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">Matrices Pvt Ltd Sponsors Smart Learning Center 2026</h3>
-                            <p class="news-excerpt">At Matrices Pvt Ltd, we believe education builds tomorrow. Proudly sponsoring the Smart Learning Center 2026 Certificate Award Ceremony, we celebrate excellence, inspire growth, and support the leaders of tomorrow.</p>
-                            <a href="pages/news.html#smartlearning" class="news-read-more">Read More →</a>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news/risho_event_01.jpg" alt="The Matrices Award" class="news-img">
-                            <div class="news-category">Featured</div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">August 24, 2025</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">Rishoks Sweets Receives Prestigious Industry Award</h3>
-                            <p class="news-excerpt">We're proud to announce that The Matrices has been recognized with a prestigious industry award for our outstanding contributions to business excellence and innovation across multiple sectors.</p>
-                            <a href="pages/news.html#award" class="news-read-more">Read More →</a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news/award%2001.jpg" alt="The Matrices Trophy" class="news-img" style="object-fit: contain !important;">
-                            <div class="news-category">Achievement</div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">September 1, 2025</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">Trophy Awarded to The Matrices</h3>
-                            <p class="news-excerpt">The Matrices has been honored with a prestigious trophy recognizing our exceptional performance and leadership in the business community.</p>
-                            <a href="pages/news.html#trophy" class="news-read-more">Read More →</a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news/event%2001.jpg" alt="CEO Trophy Presentation" class="news-img" style="object-fit: contain !important;">
-                            <div class="news-category">Leadership</div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">August  10, 2025</span>
-                                <span class="news-author">Executive Team</span>
-                            </div>
-                            <h3 class="news-title">CEO Receives Excellence Award</h3>
-                            <p class="news-excerpt">We are proud to share that our CEO has been honored by President Maithripala Sirisena with a prestigious trophy, recognizing his outstanding leadership and visionary guidance in driving The Matrices to new heights of success</p>
-                            <a href="pages/news.html#ceo" class="news-read-more">Read More →</a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <div class="news-video">
-                            <video controls class="news-video-player">
-                                <source src="assets/videos/thara_video.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="news-category">Video</div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">September 1, 2025</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">✨ Tharah Kurthi Clearance Sale is ON! ✨</h3>
-                            <p class="news-excerpt">Grab your favorite styles at unbeatable prices before they're gone!</p>
-                            <a href="pages/news.html#video" class="news-read-more">Watch Full Video →</a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="assets/images/news/electic_vehicle.jpg" alt="Electric Vehicle Fleet Expansion" class="news-img" style="object-fit: contain;">
-                            <div class="news-category">Expansion</div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-meta">
-                                <span class="news-date">September 1, 2025</span>
-                                <span class="news-author">The Matrices Team</span>
-                            </div>
-                            <h3 class="news-title">Electric Vehicle Fleet Expansion</h3>
-                            <p class="news-excerpt">We are expanding our electric vehicle fleet to enhance sustainable mobility and support our growing BYD trading and rental services.</p>
-                            <a href="pages/news.html#evfleet" class="news-read-more">Read More →</a>
-                        </div>
-                    </article>
-                    
-                </div>
-                
-                <div class="news-cta">
-                    <h3>Stay Updated</h3>
-                    <p>Subscribe to our newsletter for the latest news and updates</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" placeholder="Enter your email address" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <button type="submit" class="btn btn-primary" data-magnetic>Send message <span class="btn-arrow">→</span></button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/images/logos/Logomark.png" alt="The Matrices Logo" class="footer-logo-img">
-                    <span >THE MATRICES (PVT) LTD</span>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/images/logos/Logomark.png" alt="The Matrices">
+                    <p>The Matrices (Pvt) Ltd — a diversified group building, investing in, and scaling businesses across eight sectors with integrity and innovation.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
+                <div class="footer-col">
+                    <h5>Explore</h5>
                     <a href="#about">About</a>
-                    <a href="#achievements">Achievements</a>
+                    <a href="#achievements">Impact</a>
                     <a href="#team">Team</a>
-                    <a href="#services">Business Sectors</a>
-                    <a href="#vision-mission">Foundation</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#services">Sectors</a>
+                </div>
+                <div class="footer-col">
+                    <h5>More</h5>
+                    <a href="#foundation">Foundation</a>
                     <a href="#news">News</a>
                     <a href="#brands">Brands</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 <a href="index.html" target="_self">THE MATRICES NEXUS SOLUTION</a><sup>TM</sup>. All rights reserved.</p>
+                <p>&copy; 2026 The Matrices (Pvt) Ltd. All rights reserved.</p>
+                <p>Crafted by <a href="#">The Matrices Nexus Solutions</a><sup>™</sup></p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()" style="display: none;">
-        <span>↑</span>
-    </button>
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
-    <!-- News Detail Modal -->
-    <div id="newsDetailModal" class="news-modal" style="display: none;">
-        <div class="news-modal-content">
-            <span class="news-modal-close" onclick="closeNewsDetail()">&times;</span>
-            <div id="newsDetailContent"></div>
-            <button class="btn btn-secondary" onclick="closeNewsDetail()">Back to News</button>
-        </div>
-    </div>
-
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="js/script.js"></script>
 </body>
-
-<!-- Mirrored from www.matricesholdings.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jul 2026 14:11:46 GMT -->
 </html>
