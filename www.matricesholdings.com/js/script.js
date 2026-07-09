@@ -224,7 +224,7 @@
                     start: 'top top',
                     end: () => '+=' + getScrollAmount(),
                     pin: true,
-                    scrub: 0.6,
+                    scrub: true,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {

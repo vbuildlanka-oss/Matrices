@@ -841,12 +841,6 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     transition: transform 0.5s var(--ease), border-color 0.5s var(--ease);
 }
 .sector-card:hover { border-color: var(--accent); transform: translateY(-6px); }
-.sector-index {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: var(--accent);
-}
 .sector-icon {
     font-size: 2.6rem;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5));
@@ -866,11 +860,6 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     background: linear-gradient(90deg, var(--accent-2), var(--accent));
     border-radius: 3px;
     box-shadow: 0 0 12px var(--accent-glow);
-}
-.h-hint {
-    position: absolute;
-    top: 2rem; left: 50%; transform: translateX(-50%);
-    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mute);
 }
 
 /* mobile fallback: normal horizontal swipe */
