@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/www.matricesholdings.com/index.html" },
+    { "source": "/(.*)", "destination": "/www.matricesholdings.com/$1" }
+  ]
+}
