@@ -550,36 +550,6 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     flex-wrap: wrap;
     justify-content: center;
 }
-.hero-scroll {
-    position: absolute;
-    bottom: 1.8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-mute);
-    font-size: 0.68rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-.hero-scroll .mouse {
-    width: 24px; height: 38px;
-    border: 1.5px solid var(--glass-border);
-    border-radius: 14px;
-    position: relative;
-}
-.hero-scroll .mouse::before {
-    content: '';
-    position: absolute;
-    top: 7px; left: 50%;
-    width: 4px; height: 8px;
-    margin-left: -2px;
-    background: var(--accent);
-    border-radius: 4px;
-    animation: wheel 1.6s var(--ease-in-out) infinite;
-}
 @keyframes wheel {
     0% { opacity: 0; transform: translateY(0); }
     40% { opacity: 1; }

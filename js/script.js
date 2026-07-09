@@ -171,8 +171,7 @@
               .from('.hero-title .word', { yPercent: 115, opacity: 0, duration: 1, stagger: 0.12 }, '-=0.5')
               .from('.hero-sub', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
               .from('.hero-desc', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
-              .from('.hero-actions .btn', { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 }, '-=0.5')
-              .from('.hero-scroll', { opacity: 0, duration: 0.6 }, '-=0.2');
+              .from('.hero-actions .btn', { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 }, '-=0.5');
 
             // Hero logo floating + parallax on scroll
             gsap.to('#heroLogo', { y: -18, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: -1 });
