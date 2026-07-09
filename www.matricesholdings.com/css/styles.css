@@ -823,6 +823,25 @@ section { position: relative; padding: clamp(4.5rem, 9vw, 8rem) 0; }
     margin: 3.2rem 0 1.6rem;
 }
 
+/* Tech team: horizontal scroll on mobile/tablet for a polished look */
+@media (max-width: 900px) {
+    .people-grid--scroll {
+        display: flex;
+        gap: 1.2rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 var(--gutter) 1rem;
+        margin: 0 calc(-1 * var(--gutter));
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .people-grid--scroll::-webkit-scrollbar { display: none; }
+    .people-grid--scroll .person {
+        flex: 0 0 min(280px, 75vw);
+        scroll-snap-align: center;
+    }
+}
+
 /* ---------------------------------------------------------------------
    15. SECTORS — horizontal pinned scroll
    --------------------------------------------------------------------- */
